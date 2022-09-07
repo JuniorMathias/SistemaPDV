@@ -58,15 +58,6 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
                         <td> <?php echo $user_data['name']; ?> </td>
                         <td> <?php echo $user_data['price']; ?> </td>
                         <td> <?php echo $user_data['description']; ?> </td>
-
-                        <input id="name" type="hidden" name="name" maxlengt="150" placeholder="Nome Produto" value="<?php echo $user_data['name']; ?>"></br>
-
-
-                        <input id="price" type="hidden" name="price" maxlengt="150" placeholder="Preço" value="<?php echo $user_data['price']; ?>"></br>
-
-
-                        <input id="description" type="hidden" name="description" maxlengt="150" placeholder="Descrição" value="<?php echo $user_data['description']; ?>"></br>
-
                         <td>
                        <?php  echo "<a href='purchase.php? id=" . $user_data['id']. " & idCliente=".$_GET['id']."'> Comprar  </a>  "; ?>
                         </td>
@@ -77,7 +68,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
         </table>
 
     </form>
-
+                    <a href="../cliente.php">Voltar Área Cliente</a>
 
 
 </body>

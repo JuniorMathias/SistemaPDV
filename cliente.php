@@ -45,7 +45,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
         </div>
         <?php include_once "busca.php"; ?>
     </form>
-    
+    <a href="index.php">INICIO</a>
 
 
 

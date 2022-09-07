@@ -2,11 +2,11 @@
 <?php
 $conn =  mysqli_connect($servidor, $dbusuario, $dbsenha, $dbnome);
 $result_nomes = "SELECT count(A.idClient) AS qtd, B.nome, SUM(C.price) AS prices FROM tbPurcharseItem A LEFT JOIN tbclientes B ON A.idClient= B.id 
-LEFT JOIN tbproducts C ON A.idProduct= C.id GROUP BY (A.idClient)";
+LEFT JOIN tbproducts C ON A.idProduct= C.id GROUP BY (A.idClient)ORDER BY count(A.idClient) desc";
 
 $result_mes = "SELECT count(A.idClient) AS qtd, B.nome, SUM(C.price) AS prices FROM tbPurcharseItem A LEFT JOIN tbclientes B ON
- A.idClient= B.id LEFT JOIN tbproducts C ON A.idProduct= C.id  WHERE A.date = '" .date("Y-".$_GET['mes']."-d")." '  ORDER BY count(A.idClient)asc GROUP BY (A.idClient); ";
-echo $result_mes;
+ A.idClient= B.id LEFT JOIN tbproducts C ON A.idProduct= C.id  WHERE A.date = '" .date("Y-".$_GET['mes']."-d")." ' GROUP BY (A.idClient)ORDER BY count(A.idClient) desc";
+
 if (isset($_GET['mes'])) {
     $resultado_nomes = mysqli_query($conn, $result_mes);
 } else {
@@ -34,7 +34,7 @@ if (isset($_GET['mes'])) {
     <form method="get" name="cliente" action="index.php">
 
         <select name="mes">
-            <option>Escolha o mês</option>
+            <option value="00">Escolha o mês</option>
             <option value="01">Janeiro</option>
             <option value="02">Fevereiro</option>
             <option value="03">Março</option>
