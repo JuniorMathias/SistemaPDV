@@ -1,23 +1,21 @@
 <?php include_once "../config.php"; ?>
-
 <?php
-$date = date("Y/m/d");
+$date = date("Y-m-d");
 $idProd = $_GET['id'];
 $idCliente = $_GET['idCliente'];
 $sql = "INSERT INTO tbPurchase(date) VALUES ('$date')";
-
 mysqli_query($conn, $sql);
 
 $idInserido = mysqli_insert_id($conn);
 
-$sql1 = "INSERT INTO tbPurcharseItem(idPurchase,idProduct,idClient) VALUES ($idInserido, $idProd , $idCliente )";
+$sql1 = "INSERT INTO tbPurcharseItem(idPurchase,idProduct,idClient,date) VALUES ($idInserido, $idProd , $idCliente,'$date')";
 
 mysqli_query($conn, $sql1);
 ?>
 <?php
 $conn =  mysqli_connect($servidor, $dbusuario, $dbsenha, $dbnome);
-$result_nomes = "SELECT B.nome,C.name FROM tbPurcharseItem A LEFT JOIN tbclientes B ON A.idClient= B.id 
-LEFT JOIN tbproducts C ON A.idProduct= C.id ";
+$result_nomes = "SELECT B.nome,C.name,C.price FROM tbPurcharseItem A LEFT JOIN tbclientes B ON A.idClient= B.id 
+LEFT JOIN tbproducts C ON A.idProduct= C.id WHERE A.idClient=". $idCliente;
 
 $resultado_nomes = mysqli_query($conn, $result_nomes);
 
@@ -44,20 +42,31 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
             <tr>
                 <th scope="col">Cliente</th>
                 <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
             </tr>
         </thead>
         <tbody>
+            <?php 
+                    $total = 0;
+            ?>
             <?php while ($user_data = mysqli_fetch_assoc($resultado_nomes)) { ?>
+               
+               <?php 
+                    $total = $total + $user_data['price'];
+                ?>
                 <tr>
                     <td> <?php echo $user_data['nome']; ?> </td>
                     <td> <?php echo $user_data['name']; ?> </td>
-
+                    <td> <?php echo $user_data['price']; ?> </td>
                 </tr>
             <?php } ?>
+            <tr>
+                <td>TOTAL</td>
+                <td><?php echo $total ?></td>
+            </tr>
         </tbody>
     </table>
-
-
+                <a href="formPurchase.php?id=<?php echo $idCliente ?> " type="submit" value="Comprar Mais"> Comprar Mais</a> 
 
 </body>
 
