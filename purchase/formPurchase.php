@@ -1,3 +1,9 @@
+<?php include_once "../config.php"; ?>
+<?php
+$conn =  mysqli_connect($servidor, $dbusuario, $dbsenha, $dbnome);
+$result_nomes = "SELECT * FROM tbproducts";
+$resultado_nomes = mysqli_query($conn, $result_nomes);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,31 +20,31 @@
 
 <body>
 
-    <form method="get" name="formbusca" action="dbListProducts.php">
-        <label>Pesquisa</label>
-        <input type="text" name="busca">
-        <input type="submit" name=" " value="ok">
-    </form>
-    <br><br>
+    <h1>LISTA DE PRODUTOS</h1>    <br><br>
 
-    <form method="post" name="cliente" action="dbInsertProduct.php">
-        <div class="field">
-            <h1>COMPRAS</h1>
-            <label>Nome</label>
-            <input id="name" type="text" name="nproduto" maxlengt="150" placeholder="Nome Produto"></br>
-           
-            <label>DATA</label>
-            <input id="name" type="date" name="date" maxlengt="150" placeholder="Data Compra"></br>
-
-            <label>Preço</label>
-            <input id="price" type="text" name="clientId" maxlengt="150" placeholder="Cliente Id"></br>
-
-            <label>Descrição</label>
-            <input id="description" type="text" name="productId" maxlengt="150" placeholder="Pro"></br>
-
-
-            <input class="botao" type="submit" name="add" value="Enviar">
-        </div>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Descrição</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <?php while($user_data = mysqli_fetch_assoc($resultado_nomes)){ ?>
+   <tr>
+    <td> <?php echo $user_data['name'];?>  </td>
+    <td> <?php echo $user_data['price'];?>  </td>
+    <td> <?php echo $user_data['description'];?>  </td>
+    <td>
+    <input type="submit" name=" " value="COMPRAR">
+    </td>
+   </tr>
+   <?php } ?>
+  </tbody>
+  
+</table>
     
     </form>
 

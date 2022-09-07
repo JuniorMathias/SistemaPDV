@@ -3,7 +3,6 @@
 <?php
 $nome = $_POST['nome'];
 $dataNascimento = $_POST['nascimento'];
-$compras = $_POST[''];
 
 
 $sql = "INSERT INTO tbclientes(nome,dataNascimento) VALUES ('$nome ', '$dataNascimento')" ; 

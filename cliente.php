@@ -57,6 +57,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
     <td> <?php echo $user_data['id'];?>  </td>
     <td> <?php echo $user_data['nome'];?>  </td>
     <td> <?php echo $user_data['dataNascimento'];?>  </td>
+    <td> <?php echo $user_data['name'];?>  </td>
    </tr>
    <?php } ?>
   </tbody>

@@ -23,7 +23,7 @@
 
     <form method="post" name="cliente" action="dbInsertProduct.php">
         <div class="field">
-            <h1>PRODUTO</h1>
+            <h1>ÁREA PARA ADICIONAR PRODUTOS</h1>
             <label>Nome</label>
             <input id="name" type="text" name="nproduto" maxlengt="150" placeholder="Nome Produto"></br>
 
