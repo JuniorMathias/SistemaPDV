@@ -24,8 +24,11 @@
     <form method="post" name="cliente" action="dbInsertProduct.php">
         <div class="field">
             <h1>COMPRAS</h1>
+            <label>Nome</label>
+            <input id="name" type="text" name="nproduto" maxlengt="150" placeholder="Nome Produto"></br>
+           
             <label>DATA</label>
-            <input id="name" type="text" name="date" maxlengt="150" placeholder="Data Produto"></br>
+            <input id="name" type="date" name="date" maxlengt="150" placeholder="Data Compra"></br>
 
             <label>Preço</label>
             <input id="price" type="text" name="clientId" maxlengt="150" placeholder="Cliente Id"></br>
@@ -36,6 +39,7 @@
 
             <input class="botao" type="submit" name="add" value="Enviar">
         </div>
+    
     </form>
 
 

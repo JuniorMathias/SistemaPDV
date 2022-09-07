@@ -34,8 +34,9 @@
             <input id="description" type="text" name="descricao" maxlengt="150" placeholder="Descrição"></br>
 
 
-            <input class="botao" type="submit" name="add" value="comprar">
+            <input class="botao" type="submit" name="add" value="Adicionar">
         </div>
+      
     </form>
 
 

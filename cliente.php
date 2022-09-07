@@ -1,15 +1,9 @@
 <?php include_once "config.php"; ?>
 <?php
-$id = $_GET['id'];
 $conn =  mysqli_connect($servidor, $dbusuario, $dbsenha, $dbnome);
-mysqli_set_charset($conn, "utf8");
-$result_nomes = "SELECT * FROM tbclientes WHERE id= '$id' LIMIT 1";
+$result_nomes = "SELECT * FROM tbclientes";
 $resultado_nomes = mysqli_query($conn, $result_nomes);
-while($linha = mysqli_fetch_array($resultado_nomes)){
-    $id = $linha['id'];
-    $nome = $linha['nome'];
-    $dataNascimento = $linha['nascimento'];
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +42,26 @@ while($linha = mysqli_fetch_array($resultado_nomes)){
 
             <input class="botao" type="submit" name="add" value="ENVIAR">
         </div>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço </th>
+      <th scope="col">Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php while($user_data = mysqli_fetch_assoc($resultado_nomes)){ ?>
+   <tr>
+    <td> <?php echo $user_data['id'];?>  </td>
+    <td> <?php echo $user_data['nome'];?>  </td>
+    <td> <?php echo $user_data['dataNascimento'];?>  </td>
+   </tr>
+   <?php } ?>
+  </tbody>
+  
+</table>
     </form>
 
 
