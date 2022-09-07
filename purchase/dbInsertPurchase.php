@@ -1,6 +1,7 @@
 <?php include_once "../config.php"; ?>
 
 <?php
+$id = $_POST['id'];
 $date = $_POST['date'];
 $clientId = $_POST['clientId'];
 $productId = $_POST['productId'];

@@ -8,7 +8,7 @@ $dataNascimento = $_POST['nascimento'];
 $sql = "INSERT INTO tbclientes(nome,dataNascimento) VALUES ('$nome ', '$dataNascimento')" ; 
 
 if (mysqli_query($conn, $sql)){
-    header("Location: purchase/formPurchase.php");
+    header("Location: cliente.php");
     
 }else{
     echo " Deu erro " . $sql . "<br>" . mysqli_error($conn);
