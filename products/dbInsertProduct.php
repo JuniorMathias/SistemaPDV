@@ -1,13 +1,10 @@
 <?php include_once "../config.php"; ?>
-
 <?php
 $nomeProduto = $_POST['nproduto'];
 $descricao = $_POST['descricao'];
 $preco = $_POST['preco'];
 
 $sql = "INSERT INTO tbproducts(name,description,price) VALUES ('$nomeProduto ', '$descricao' , '$preco' )";
-
-
 if (mysqli_query($conn, $sql)) {
     header("Location: formProduct.php");
 } else {
@@ -19,9 +16,5 @@ if (mysqli_query($conn, $sql)) {
         echo " Deu erro " . $sql . "<br>" . mysqli_error($conn);
     }
 }
-
 mysqli_close($conn);
-
-
-
 ?>

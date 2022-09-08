@@ -37,17 +37,13 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
     <form method="post" name="" action="dbInsertPurchase.php">
         <table id="tb">
             <thead>
-
-
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Descrição</th>
-
                 </tr>
             </thead>
             <tbody>
-
                 <?php while ($user_data = mysqli_fetch_assoc($resultado_nomes)) { ?>
 
                     <tr>
@@ -62,7 +58,6 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
             </tbody>
 
         </table>
-
     </form>
                     <a href="../cliente.php">Voltar Área Cliente</a>
 

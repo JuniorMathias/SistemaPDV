@@ -6,9 +6,7 @@
     <meta name="viewport" content="with=device-width, initial-scale=">
     <link rel="stylesheet" type="text/css" href="../style.php" />
     <title> Produtos</title>
-    <style>form {
-    width: 60%;
-} </style>
+    </style>
 
 </head>
 
@@ -16,7 +14,7 @@
    
     <form method="post" name="cliente" action="dbInsertProduct.php">
     <div class="box">
-            <h1>ÁREA PARA ADICIONAR PRODUTOS</h1>
+            <h1>ADICIONAR PRODUTOS</h1>
             <label>Nome</label>
             <input id="name" type="text" name="nproduto" maxlengt="150" placeholder="Nome Produto"></br>
 

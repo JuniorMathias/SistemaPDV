@@ -1,11 +1,6 @@
 <?php include_once "config.php"; ?>
 
-<?php
-$conn =  mysqli_connect($servidor, $dbusuario, $dbsenha, $dbnome);
-$result_nomes = "SELECT * FROM tbclientes";
-$resultado_nomes = mysqli_query($conn, $result_nomes);
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +28,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
                
             </div> 
 
-            <div class="box"> <h1>CLIENTES JÁ CADASTRADOS</h1> <?php include_once "busca.php"; ?> </div> 
+            <div class="box"> <h1>CLIENTES CADASTRADOS</h1> <?php include_once "busca.php"; ?> </div> 
             <br><br><br> <a href="index.php">INICIO</a>   
              <a href="products/formProduct.php">CADASTRAR PRODUTOS</a> 
             

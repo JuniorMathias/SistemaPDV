@@ -47,7 +47,7 @@ if (isset($_GET['mes'])) {
         </div>
         
         <div class="box">
-        <label>RANKING DO MÊS ATUAL</label>
+        <label>RANKING DO MÊS ATUAL DE QUEM COMPROU MAIS. (QUANTIDADE)</label>
             <table class="table">
                 <thead>
                     <tr>
@@ -67,6 +67,7 @@ if (isset($_GET['mes'])) {
                         </tr>
                     <?php } ?>
                 </tbody>
+            </table>
         </div>
     </form>
 </body>

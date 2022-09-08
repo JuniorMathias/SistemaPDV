@@ -8,7 +8,7 @@ text-align: center;
 .box {
     width: 60%;
     margin: 0px auto;
-    box-shadow: 0 4px 8px #999;
+    box-shadow: 0 4px 8px black;
     text-align: center;
     padding:1%;
 }
@@ -37,7 +37,7 @@ label {
    table, tr, td, th{
     margin:auto;
     margin-top:30px;
-    border:#000 solid 1px;
+    border:#999 solid 1px;
     width:450px;
     padding:0px;
     font-size:20px;
@@ -48,6 +48,6 @@ td{
     height:30px;
 }
     th{
-    background-color:#999;
+    background-color:black;
     color:#FFF;
 }
