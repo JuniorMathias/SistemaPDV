@@ -13,42 +13,35 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.php" />
     <title> Cadastro de Cliente</title>
-    <style>form {
-    width: 60%;
-} </style>
-
 </head>
-
 <body>
-
-    <form method="get" name="formbusca" action="busca.php">
-        <label>Pesquisa</label>
-        <input type="text" name="busca">
-        <input type="submit" name=" " value="ok">
-    </form>
+    <div class="box">
+        <form method="get" name="formbusca" action="busca.php">
+        <h1>Clientes Cadastrados</h1>      
+        <label>Pesquisar </label>
+            <input type="text" name="busca">
+            <input type="submit" name=" " value="Buscar">
+             
+        </form>
+    </div>
     <br><br>
+    <div class="box">
+        <form method="post" name="cliente" action="dados.php">
+        
+                <h1>CADASTRO DO CLIENTE</h1>
+                <label>Nome Completo</label>
+                <input id="nome" type="text" name="nome" maxlengt="150" placeholder="Nome Completo" value="<?php echo $nome; ?>"></br>
 
-    <form method="post" name="cliente" action="dados.php">
-        <div class="field">
-            <h1>CADASTRO DO CLIENTE</h1>
-            <label>Nome Completo</label>
-            <input id="nome" type="text" name="nome" maxlengt="150" placeholder="Nome Completo"
-            value="<?php echo $nome ;?>"></br>
-
-            <label> Data de Nascimento</label>
-            <input id="nascimento" type="date" name="nascimento"> </br>
-
-
-            <input class="botao" type="submit" name="add" value="ENVIAR">
-        </div>
-        <?php include_once "busca.php"; ?>
-    </form>
-    <a href="index.php">INICIO</a>
-
-
-
+                <label> Data de Nascimento</label>
+                <input id="nascimento" type="date" name="nascimento"> </br>
+                <input class="botao" type="submit" name="add" value="CADASTRAR">
+               
+            </div>  
+            <br><br><br> <a href="index.php">VOLTAR</a>   
+            
+        </form>
 </body>
 
 </html>

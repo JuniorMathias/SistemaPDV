@@ -26,7 +26,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
     <title> Cadastro de Cliente</title>
     <style>
         form {

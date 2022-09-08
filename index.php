@@ -5,14 +5,13 @@ $result_nomes = "SELECT count(A.idClient) AS qtd, B.nome, SUM(C.price) AS prices
 LEFT JOIN tbproducts C ON A.idProduct= C.id GROUP BY (A.idClient)ORDER BY count(A.idClient) desc";
 
 $result_mes = "SELECT count(A.idClient) AS qtd, B.nome, SUM(C.price) AS prices FROM tbPurcharseItem A LEFT JOIN tbclientes B ON
- A.idClient= B.id LEFT JOIN tbproducts C ON A.idProduct= C.id  WHERE A.date = '" .date("Y-".$_GET['mes']."-d")." ' GROUP BY (A.idClient)ORDER BY count(A.idClient) desc";
+ A.idClient= B.id LEFT JOIN tbproducts C ON A.idProduct= C.id  WHERE A.date >= '" .date("Y-".$_GET['mes']."-01")." ' and A.date <= '" .date("Y-".$_GET['mes']."-t")." 'GROUP BY (A.idClient)ORDER BY count(A.idClient) desc";
 
 if (isset($_GET['mes'])) {
     $resultado_nomes = mysqli_query($conn, $result_mes);
 } else {
     $resultado_nomes = mysqli_query($conn, $result_nomes);
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,13 +19,8 @@ if (isset($_GET['mes'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.php" />
     <title> Cadastro de Cliente</title>
-    <style>
-        form {
-            width: 60%;
-        }
-    </style>
 </head>
 
 <body>
@@ -48,6 +42,11 @@ if (isset($_GET['mes'])) {
             <option value="11">Novembro</option>
             <option value="12">Dezembro</option>
         </select>
+        <input type="submit" value="Pesquisar"><br>
+        <a href="cliente.php">Área de Cadastro</a>
+        </div>
+
+      
         <table class="table">
             <thead>
                 <tr>
@@ -67,10 +66,10 @@ if (isset($_GET['mes'])) {
                     </tr>
                 <?php } ?>
             </tbody>
-            <input type="submit" value="Pesquisar">
-
+   
+                
     </form>
-    <a href="cliente.php">Área de Cadastro</a>
+    
 </body>
 
 </html>
