@@ -22,24 +22,20 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.php" />
     <title> COMPRAS </title>
-    <style>
-        form {
-            width: 60%;
-        }
-    </style>
 
 </head>
 
 <body>
-
+<div class="box"><label>Seja Muito Bem Vindo(a) <?php echo $user_data1['nome']; ?></label></div>
+<div class="box">
     <h1>LISTA DE PRODUTOS</h1> <br><br>
 
-    <p>Cliente <?php echo $user_data1['nome']; ?></p>
+    
 
     <form method="post" name="" action="dbInsertPurchase.php">
-        <table class="table">
+        <table id="tb">
             <thead>
 
 
@@ -70,7 +66,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
     </form>
                     <a href="../cliente.php">Voltar Área Cliente</a>
 
-
+                    </div>
 </body>
 
 </html>

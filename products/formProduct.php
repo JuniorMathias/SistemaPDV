@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.php" />
     <title> Produtos</title>
     <style>form {
     width: 60%;
@@ -13,16 +13,9 @@
 </head>
 
 <body>
-
-    <form method="get" name="formbusca" action="dbListProducts.php">
-        <label>Pesquisa</label>
-        <input type="text" name="busca">
-        <input type="submit" name=" " value="ok">
-    </form>
-    <br><br>
-
+   
     <form method="post" name="cliente" action="dbInsertProduct.php">
-        <div class="field">
+    <div class="box">
             <h1>ÁREA PARA ADICIONAR PRODUTOS</h1>
             <label>Nome</label>
             <input id="name" type="text" name="nproduto" maxlengt="150" placeholder="Nome Produto"></br>
@@ -34,11 +27,13 @@
             <input id="description" type="text" name="descricao" maxlengt="150" placeholder="Descrição"></br>
 
 
-            <input class="botao" type="submit" name="add" value="Adicionar">
+            <input class="botao" type="submit" name="add" value="Adicionar"><br>
+            <a href="../cliente.php">Área de Cadastro</a>
         </div>
       
     </form>
-
+    
+   
 </body>
 
 </html>

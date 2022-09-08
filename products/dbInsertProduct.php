@@ -2,11 +2,10 @@
 
 <?php
 $nomeProduto = $_POST['nproduto'];
-$preco = $_POST['preco'];
 $descricao = $_POST['descricao'];
+$preco = $_POST['preco'];
 
-
-$sql = "INSERT INTO tbproducts(name,price,description) VALUES ('$nomeProduto ', '$preco' , '$descricao')";
+$sql = "INSERT INTO tbproducts(name,description,price) VALUES ('$nomeProduto ', '$descricao' , '$preco' )";
 
 
 if (mysqli_query($conn, $sql)) {

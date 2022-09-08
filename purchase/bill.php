@@ -66,8 +66,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
             </tr>
         </tbody>
     </table>
-              <a href="formPurchase.php?id=<?php echo $idCliente ?> " type="submit" value="Comprar Mais"> Comprar Mais</a> 
-              <a href="formPurchase.php?id=<?php echo $idCliente ?> " type="submit" value="Comprar Mais"> Finalizar</a>
-</body>
+    <a href="index.php">Página Inicial</a> 
+             
 
 </html>

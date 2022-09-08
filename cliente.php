@@ -17,29 +17,25 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
     <title> Cadastro de Cliente</title>
 </head>
 <body>
-    <div class="box">
-        <form method="get" name="formbusca" action="busca.php">
-        <h1>Clientes Cadastrados</h1>      
-        <label>Pesquisar </label>
-            <input type="text" name="busca">
-            <input type="submit" name=" " value="Buscar">
-             
-        </form>
-    </div>
+
     <br><br>
     <div class="box">
         <form method="post" name="cliente" action="dados.php">
         
-                <h1>CADASTRO DO CLIENTE</h1>
+                <h1>ÁREA DE CADASTRO</h1>
                 <label>Nome Completo</label>
                 <input id="nome" type="text" name="nome" maxlengt="150" placeholder="Nome Completo" value="<?php echo $nome; ?>"></br>
 
                 <label> Data de Nascimento</label>
                 <input id="nascimento" type="date" name="nascimento"> </br>
-                <input class="botao" type="submit" name="add" value="CADASTRAR">
+                <input class="botao" type="submit" name="add" value="CADASTRAR"><br>
+              
                
-            </div>  
-            <br><br><br> <a href="index.php">VOLTAR</a>   
+            </div> 
+
+            <div class="box"> <h1>CLIENTES JÁ CADASTRADOS</h1> <?php include_once "busca.php"; ?> </div> 
+            <br><br><br> <a href="index.php">INICIO</a>   
+             <a href="products/formProduct.php">CADASTRAR PRODUTOS</a> 
             
         </form>
 </body>
