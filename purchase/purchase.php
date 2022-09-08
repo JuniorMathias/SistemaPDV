@@ -27,7 +27,7 @@ $resultado_nomes = mysqli_query($conn, $result_nomes);
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=">
     <link rel="stylesheet" type="text/css" href="../style.php" />
-    <title> Cadastro de Cliente</title>
+    <title> Nota Fiscal</title>
     <style>
 
     </style>
